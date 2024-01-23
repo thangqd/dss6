@@ -47,4 +47,4 @@ To access the Lizard webservice a valid API key is required. This is supplied in
 Open your web browser and go to http://localhost:8501 to interact with the Decision Support System.
 
 ## Support
-For any inquiries or issues, please https://github.com/thangqd/geoprodss6cessing/issues
+For any inquiries or issues, please https://github.com/thangqd/dss6/issues
