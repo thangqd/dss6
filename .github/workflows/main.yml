@@ -25,7 +25,7 @@ jobs:
       - name: Publish the Docker image
         run: |
           docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
-          docker tag mkdc-dss6_web ghcr.io/thangqd/dss6:main
+          docker tag dss6_web ghcr.io/thangqd/dss6:main
           docker push ghcr.io/thangqd/dss6:main
         if: github.ref == 'refs/heads/main'
         # Running this job only for main branch.
