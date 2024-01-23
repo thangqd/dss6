@@ -1,0 +1,11 @@
+version: '2'
+services:
+
+  web:
+    env_file:
+      - .env
+    build: .
+    ports:
+      - 8501:8501
+    volumes:
+      - .:/app

@@ -1,0 +1,31 @@
+name: docker creation
+
+# Run on PR requests. And on main itself.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or
+# in parallel
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can
+      # access it
+      - uses: actions/checkout@v3
+
+      - name: Build docker
+        run: docker-compose build
+
+      - name: Publish the Docker image
+        run: |
+          docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+          docker tag mkdc-dss6_web ghcr.io/thangqd/dss6:main
+          docker push ghcr.io/thangqd/dss6:main
+        if: github.ref == 'refs/heads/main'
+        # Running this job only for main branch.
