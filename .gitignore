@@ -2,4 +2,4 @@
 __pycache__/
 localsecret.py
 .streamlit/secrets.toml
-.env
+# .env
