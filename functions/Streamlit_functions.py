@@ -184,10 +184,7 @@ def make_damage_curve(df_damage_curve ,df_colors_landuse,xaxis_title,invert):
     return fig
 
 
-def make_landuse_map(layer, location, labels, colors):
-    st.write(layer["url"])
-    st.write(layer["layers"])
-    st.write(layer["styles"])
+def make_landuse_map(layer, location, labels, colors):    
     m = leafmap.Map(
         center=location,
         zoom=10,
