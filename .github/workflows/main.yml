@@ -1,31 +1,25 @@
-name: docker creation
+name: Build and Push Docker Image
 
-# Run on PR requests. And on main itself.
 on:
   push:
     branches:
       - main
-  pull_request:
 
-
-# A workflow run is made up of one or more jobs that can run sequentially or
-# in parallel
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can
-      # access it
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Build docker
-        run: docker-compose build
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-      - name: Publish the Docker image
-        run: |
-          docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
-          docker tag dss6_web ghcr.io/thangqd/dss6:main
-          docker push ghcr.io/thangqd/dss6:main
-        if: github.ref == 'refs/heads/main'
-        # Running this job only for main branch.
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ghcr.io/${{ github.thangqd }}/${{ github.dss6 }}:latest
