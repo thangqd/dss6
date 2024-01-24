@@ -14,7 +14,7 @@ import folium
 import branca.colormap as cm
 from streamlit_option_menu import option_menu
 import streamlit as st
-from folium.plugins import MeasureControl, Fullscreen
+from folium.plugins import Fullscreen
 
 
 # Streamlit functions
@@ -93,8 +93,6 @@ def make_map(layer, location, bbox, colors, vmin, vmax, caption):
                 force_separate_button   = True,                                         
             ).add_to(folium_map)
         
-    folium_map.add_child(MeasureControl())
-
     folium_map.fit_bounds(bbox)
     
     folium.raster_layers.WmsTileLayer(

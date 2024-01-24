@@ -56,10 +56,10 @@ selected = streamlit_menu(example=EXAMPLE_NO)
 # Data retrival
 # =============================================================================
 lizard_headers = {
-    # "username": os.environ["USERNAME"],
-    # "password": os.environ["PASSWORD"],
-    "username": '__key__',
-    "password": 'dHrkmkoz.aeLBK4c0wW0z2OIQWmqWF9QajHARwDQQ',
+    "username": os.environ["USERNAME"],
+    "password": os.environ["PASSWORD"],
+    # "username": '__key__',
+    # "password": 'dHrkmkoz.aeLBK4c0wW0z2OIQWmqWF9QajHARwDQQ',
     "Content-Type": "application/json",
 }
 
