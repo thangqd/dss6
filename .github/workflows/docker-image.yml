@@ -23,7 +23,7 @@ jobs:
         run: |
           docker login --username ${{ github.actor }} --password ${{ secrets.CR_PAT }} ghcr.io
           docker-compose build
-          docker tag dss6_web ghcr.io/thangqd/dss6:latest
+          docker tag dss6-web ghcr.io/thangqd/dss6:latest
           docker push ghcr.io/thangqd/dss6:latest
         # Running this job only for main branch.
 # name: Docker Image CI
