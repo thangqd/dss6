@@ -1,3 +1,5 @@
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://mkdc-dss6.streamlit.app/)
+
 # MKDC DSS-6
 This repository contains code for Decision Support System 6 within the Mekong Delta Centre.
 
