@@ -17,3 +17,5 @@ textColor = "#000000" # black
 # Font family (serif | sans serif | mono) for the page. Will not impact code areas.
 # Default: "sans serif"
 font = "sans serif"
+
+page_icon=":aquarius:"
