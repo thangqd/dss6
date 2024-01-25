@@ -46,7 +46,7 @@ from input.Constants import *
 # Page configuration
 # =============================================================================
 st.set_page_config(page_title="DSS 6", page_icon=":aquarius:", layout="wide")
-st.title("MKDC DSS 6 - Natural hazard impacts forcast")
+st.title("MKDC DSS 6 - Natural hazard impacts forecast")
 
 EXAMPLE_NO = 3
 st.write("  ")
